@@ -12,5 +12,13 @@
 */
 
 $router->get('/', function () use ($router) {
-    return $router->app->version();
+    // return $router->app->version();
+    return "aaaaaaaaaa";
 });
+
+// $router->post('authors', ['uses' => 'AuthorController@create']);
+
+$router->post('login/','UserController@authenticate');
+$router->post('getUsers/','UserController@getUsers');
+
+$router->post('auth', ['uses' => 'AuthController@createUser']);
