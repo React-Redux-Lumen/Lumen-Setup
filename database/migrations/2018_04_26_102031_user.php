@@ -22,6 +22,7 @@ class User extends Migration
             $table->string('password');
             $table->string('email');
             $table->string('address');
+            $table->string('api_token');
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at');
             $table->timestamp('deleted_at');

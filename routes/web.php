@@ -19,6 +19,11 @@ $router->get('/', function () use ($router) {
 // $router->post('authors', ['uses' => 'AuthorController@create']);
 
 $router->post('login/','UserController@authenticate');
-$router->post('getUsers/','UserController@getUsers');
+
+$router->group(['middleware' => 'auth'], function () use ($router) {
+
+    $router->post('getUsers/','UserController@getUsers');
+});
+
 
 $router->post('auth', ['uses' => 'AuthController@createUser']);
